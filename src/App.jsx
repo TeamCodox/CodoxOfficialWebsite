@@ -2,7 +2,6 @@ import React from "react";
 import useSiteInteractions from "./hooks/useSiteInteractions";
 import HeroSection from "./components/sections/HeroSection";
 import ServicesSection from "./components/sections/ServicesSection";
-import PortfolioAtmosphereSection from "./components/sections/PortfolioAtmosphereSection";
 import ProjectsSection from "./components/sections/ProjectsSection";
 import TeamSection from "./components/sections/TeamSection";
 import PricingSection from "./components/sections/PricingSection";
@@ -20,7 +19,6 @@ export default function App() {
     <main className="min-h-screen bg-black text-on-surface">
       <HeroSection />
       <ServicesSection />
-      <PortfolioAtmosphereSection />
       <ProjectsSection />
       <TeamSection />
       <PricingSection />

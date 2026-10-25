@@ -34,17 +34,6 @@ export default function useSiteInteractions() {
     })();
     (function(){const wrappers=document.querySelectorAll('.comet-card-wrapper');wrappers.forEach(wrapper=>{const card=wrapper.querySelector('.comet-card');const glare=card.querySelector('.comet-glare');wrapper.addEventListener('mousemove',(e)=>{const rect=wrapper.getBoundingClientRect();const x=e.clientX-rect.left;const y=e.clientY-rect.top;const centerX=rect.width/2;const centerY=rect.height/2;const rotateX=(centerY-y)/15;const rotateY=(x-centerX)/15;card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;glare.style.opacity='1';glare.style.setProperty('--mouse-x',`${(x/rect.width)*100}%`);glare.style.setProperty('--mouse-y',`${(y/rect.height)*100}%`);});wrapper.addEventListener('mouseleave',()=>{card.style.transform='rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';glare.style.opacity='0';});});})();
     (function() {
-      const section = document.querySelector('#portfolio');
-      if (!section) return;
-      section.addEventListener('mousemove', (e) => {
-        const rect = section.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        section.style.setProperty('--mouse-x', x + '%');
-        section.style.setProperty('--mouse-y', y + '%');
-      });
-    })();
-    (function() {
         const wrappers = document.querySelectorAll('.project-card-wrapper');
         
         const observer = new IntersectionObserver((entries) => {
