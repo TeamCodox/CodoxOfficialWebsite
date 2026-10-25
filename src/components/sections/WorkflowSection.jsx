@@ -19,7 +19,7 @@ export default function WorkflowSection() {
               <h2 className="text-white font-bold leading-tight tracking-tighter relative group text-4xl md:text-5xl">
                 <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">
                   Our Strategic 
-                  <span className="italic font-medium text-primary inline-block transform hover:scale-105 transition-transform duration-500" style={{fontFamily: "\"Playfair Display\", serif"}}>Workflow</span>
+                  <span className="ml-[0.30em] italic font-medium text-primary inline-block transform hover:scale-105 transition-transform duration-500" style={{fontFamily: "\"Playfair Display\", serif"}}>Workflow</span>
                 </span>
               </h2>
             </div>
@@ -77,7 +77,7 @@ export default function WorkflowSection() {
                     
                     <h3 className="text-white text-headline-md font-bold mb-2">
                       Discovery & 
-                      <span className="italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Strategy</span>
+                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Strategy</span>
                     </h3>
                     
                     <p className="text-secondary/70 text-body-md">Deep diving into your vision to architect the perfect roadmap for your digital infrastructure.</p>
@@ -113,7 +113,7 @@ export default function WorkflowSection() {
                     
                     <h3 className="text-white text-headline-md font-bold mb-2">
                       Creative 
-                      <span className="italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Engineering</span>
+                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Engineering</span>
                     </h3>
                     
                     <p className="text-secondary/70 text-body-md">Blending crystalline aesthetics with functional precision and technical excellence.</p>
@@ -149,7 +149,7 @@ export default function WorkflowSection() {
                     
                     <h3 className="text-white text-headline-md font-bold mb-2">
                       Agile 
-                      <span className="italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Development</span>
+                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Development</span>
                     </h3>
                     
                     <p className="text-secondary/70 text-body-md">Building robust foundations with clean, scalable code and modern tech stacks.</p>
@@ -186,7 +186,7 @@ export default function WorkflowSection() {
                     
                     <h3 className="text-white text-headline-md font-bold mb-2">
                       Quality 
-                      <span className="italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Assurance</span>
+                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Assurance</span>
                     </h3>
                     
                     <p className="text-secondary/70 text-body-md max-w-md">Rigorous testing for pixel-perfect performance and military-grade security protocols.</p>
@@ -222,7 +222,7 @@ export default function WorkflowSection() {
                     
                     <h3 className="text-white text-headline-md font-bold mb-2">
                       Launch & 
-                      <span className="italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Optimize</span>
+                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Optimize</span>
                     </h3>
                     
                     <p className="text-secondary/70 text-body-md max-w-md">Seamless deployment and data-driven impact for next-gen digital excellence and scaling.</p>

@@ -20,7 +20,7 @@ export default function PricingSection() {
             <h2 className="text-white font-bold leading-tight tracking-tighter text-4xl md:text-5xl">
               <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">
                 Ready to launch? 
-                <font color="#adc6ff" face="Playfair Display, serif">
+                <font color="#adc6ff" face="Playfair Display, serif" style={{ marginLeft: "0.12em" }}>
                   <span style={{fontWeight: "500"}} className="">
                     <i>Lets Build</i>
                   </span>

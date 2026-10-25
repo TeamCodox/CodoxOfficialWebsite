@@ -21,7 +21,7 @@ export default function FaqSection() {
               <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">
                 <span className="relative inline-block">
                   
-                  <span className="italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>asked questions</span>
+                  <span className="ml-[0.12em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>asked questions</span>
                   
                   <svg className="absolute -bottom-3 left-0 w-full h-6 pointer-events-none overflow-visible" viewBox="0 0 300 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 25C60 22 180 18 298 32" stroke="#adc6ff" strokeWidth="3" strokeLinecap="round" className="opacity-80" style={{strokeDasharray: "400", strokeDashoffset: "400", animation: "draw-organic-line-faq 2s ease-in-out forwards"}}></path>
@@ -54,10 +54,14 @@ export default function FaqSection() {
               <div className="space-y-4 relative z-10">
                 
                 <h3 className="text-white text-4xl font-bold leading-tight tracking-tighter font-display-lg">
-                Ready to 
-                  <span className="text-primary italic" style={{fontFamily: "\"Playfair Display\", serif"}}>Architect</span>
-                   Your Vision?
-            
+                  Ready to{" "}
+                  <span
+                    className="inline-block ml-[0.20em] mr-[0.15em] text-primary italic"
+                    style={{ fontFamily: '"Playfair Display", serif' }}
+                  >
+                    Architect
+                  </span>
+                  Your Vision?
                 </h3>
                 
                 <p className="text-secondary/60 text-body-md leading-relaxed">

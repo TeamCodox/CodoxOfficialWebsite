@@ -21,7 +21,7 @@ export default function ServicesSection() {
                 <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">
                   Solutions We
                   {" "}
-                  <span className="italic font-medium text-primary inline-block transform hover:scale-105 transition-transform duration-500" style={{fontFamily: "\"Playfair Display\", serif"}}>Provide</span>
+                  <span className="ml-[0.12em] italic font-medium text-primary inline-block transform hover:scale-105 transition-transform duration-500" style={{fontFamily: "\"Playfair Display\", serif"}}>Provide</span>
                 </span>
               </h2>
             </div>
