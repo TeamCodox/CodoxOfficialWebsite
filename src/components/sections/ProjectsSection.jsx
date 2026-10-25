@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ProjectsSection() {
   return (
-    <section className="bg-black py-section-gap relative overflow-hidden flex flex-col items-center text-center px-margin-mobile md:px-margin-desktop" style={{backgroundColor: "rgb(13, 13, 13)"}} id="projects">
+    <section className="bg-black pt-14 pb-14 relative overflow-hidden flex flex-col items-center text-center px-margin-mobile md:px-margin-desktop" style={{backgroundColor: "rgb(13, 13, 13)"}} id="projects">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       
       
