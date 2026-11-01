@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="relative py-section-gap px-margin-mobile md:px-margin-desktop bg-[#0d0d0d] overflow-hidden" style={{fontFamily: "Poppins, sans-serif"}}>
+    <section id="pricing" className="scroll-mt-24 relative py-section-gap px-margin-mobile md:px-margin-desktop bg-[#0d0d0d] overflow-hidden" style={{fontFamily: "Poppins, sans-serif"}}>
       
       <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[180px] font-bold pointer-events-none select-none z-0 uppercase bg-gradient-to-b from-white/5 to-transparent bg-clip-text text-transparent tracking-tighter" style={{fontFamily: "\"Hanken Grotesk\", sans-serif"}}>Pricing</div>
       

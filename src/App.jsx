@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useSiteInteractions from "./hooks/useSiteInteractions";
 import HeroSection from "./components/sections/HeroSection";
 import ServicesSection from "./components/sections/ServicesSection";
@@ -15,6 +15,22 @@ import "./styles/index.css";
 
 export default function App() {
   useSiteInteractions();
+
+  // Ensure hash links (for example /#pricing from the portfolio page)
+  // scroll after the homepage sections have mounted.
+  useEffect(() => {
+    const scrollToHashTarget = () => {
+      const targetId = window.location.hash.slice(1);
+      if (!targetId) return;
+      document.getElementById(decodeURIComponent(targetId))?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
+    // Run after React has committed the page to the DOM.
+    requestAnimationFrame(scrollToHashTarget);
+  }, []);
 
   if (window.location.pathname.replace(/\/$/, "") === "/portfolio") {
     return <PortfolioPage />;
