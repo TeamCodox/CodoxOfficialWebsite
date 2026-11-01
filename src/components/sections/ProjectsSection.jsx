@@ -239,7 +239,7 @@ export default function ProjectsSection() {
       </div>
       <div className="mt-16 flex justify-center relative z-20">
         
-        <a href="#" className="group/view-more px-10 py-4 rounded-full border border-white/10 text-on-surface font-bold flex items-center gap-3 transition-all duration-500 hover:border-primary/50 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] hover:-translate-y-1">
+        <a href="/portfolio" className="group/view-more px-10 py-4 rounded-full border border-white/10 text-on-surface font-bold flex items-center gap-3 transition-all duration-500 hover:border-primary/50 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] hover:-translate-y-1">
           
           <span className="font-body-md tracking-tight">View More</span>
           

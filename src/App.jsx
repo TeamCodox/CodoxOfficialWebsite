@@ -10,10 +10,15 @@ import WorkflowSection from "./components/sections/WorkflowSection";
 import FaqSection from "./components/sections/FaqSection";
 import ContactSection from "./components/sections/ContactSection";
 import SiteFooter from "./components/sections/SiteFooter";
+import PortfolioPage from "./pages/PortfolioPage";
 import "./styles/index.css";
 
 export default function App() {
   useSiteInteractions();
+
+  if (window.location.pathname.replace(/\/$/, "") === "/portfolio") {
+    return <PortfolioPage />;
+  }
 
   return (
     <main className="min-h-screen bg-black text-on-surface">
