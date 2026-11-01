@@ -71,7 +71,7 @@ export default function SiteFooter() {
             <h5 className="text-white/40 text-[10px] font-bold uppercase tracking-widest font-display-lg">Legal</h5>
             <ul className="space-y-3">
               <li className="">
-                <a href="#" className="text-secondary/70 hover:text-primary transition-colors duration-300 text-sm font-body-md">Privacy Policy</a>
+                <a href="/privacy-policy" className="text-secondary/70 hover:text-primary transition-colors duration-300 text-sm font-body-md">Privacy Policy</a>
               </li>
               <li className="">
                 <a href="#" className="text-secondary/70 hover:text-primary transition-colors duration-300 text-sm font-body-md">Terms of Service</a>

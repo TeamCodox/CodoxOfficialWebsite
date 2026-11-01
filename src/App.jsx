@@ -11,6 +11,7 @@ import FaqSection from "./components/sections/FaqSection";
 import ContactSection from "./components/sections/ContactSection";
 import SiteFooter from "./components/sections/SiteFooter";
 import PortfolioPage from "./pages/PortfolioPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import "./styles/index.css";
 
 export default function App() {
@@ -31,6 +32,10 @@ export default function App() {
     // Run after React has committed the page to the DOM.
     requestAnimationFrame(scrollToHashTarget);
   }, []);
+
+  if (window.location.pathname.replace(/\/$/, "") === "/privacy-policy") {
+    return <PrivacyPolicyPage />;
+  }
 
   if (window.location.pathname.replace(/\/$/, "") === "/portfolio") {
     return <PortfolioPage />;
