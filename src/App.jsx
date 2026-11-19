@@ -12,6 +12,7 @@ import ContactSection from "./components/sections/ContactSection";
 import SiteFooter from "./components/sections/SiteFooter";
 import PortfolioPage from "./pages/PortfolioPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
 import "./styles/index.css";
 
 export default function App() {
@@ -39,6 +40,11 @@ export default function App() {
 
   if (window.location.pathname.replace(/\/$/, "") === "/portfolio") {
     return <PortfolioPage />;
+  }
+
+  const serviceMatch = window.location.pathname.match(/^\/services\/([^/]+)\/?$/);
+  if (serviceMatch) {
+    return <ServiceDetailPage slug={serviceMatch[1]} />;
   }
 
   return (

@@ -46,7 +46,7 @@ export default function ServicesSection() {
                 <div className="mt-auto">
                   <h3 className="text-white text-headline-md font-bold mb-2">Web Development</h3>
                   <p className="text-secondary/70 text-body-md max-w-md">Architecting high-performance decentralized foundations for next-gen digital experiences.</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
+                  <a href="/services/web-development" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
                     Learn More 
                     <span className="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-2">arrow_forward</span>
                   </a>
@@ -70,7 +70,7 @@ export default function ServicesSection() {
                 <div className="mt-auto">
                   <h3 className="text-white text-headline-md font-bold mb-2 mt-auto">Mobile Development</h3>
                   <p className="text-secondary/70 text-body-md">Fortifying your assets with translucent shield protocols and rigorous verification.</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
+                  <a href="/services/mobile-development" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
                     Learn More 
                     <span className="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-2">arrow_forward</span>
                   </a>
@@ -94,7 +94,7 @@ export default function ServicesSection() {
                 <div className="mt-auto">
                   <h3 className="text-white text-headline-md font-bold mb-2 mt-auto">UI/UX Design</h3>
                   <p className="text-secondary/70 text-body-md">Crafting intuitive interfaces that bridge the gap between human and machine.</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
+                  <a href="/services/ui-ux-design" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
                     Learn More 
                     <span className="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-2">arrow_forward</span>
                   </a>
@@ -118,7 +118,7 @@ export default function ServicesSection() {
                 <div className="mt-auto">
                   <h3 className="text-white text-headline-md font-bold mb-2 mt-auto">Admin Panel Dev</h3>
                   <p className="text-secondary/70 text-body-md max-w-lg">Engineering secure, gas-optimized protocols for the next generation of decentralized finance.</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
+                  <a href="/services/admin-panel-development" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
                     Learn More 
                     <span className="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-2">arrow_forward</span>
                   </a>
@@ -142,7 +142,7 @@ export default function ServicesSection() {
                 <div className="mt-auto">
                   <h3 className="text-white text-headline-md font-bold mb-2 mt-auto">SEO Services</h3>
                   <p className="text-secondary/70 text-body-md">Architecting transparent and efficient decision-making frameworks for digital communities.</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
+                  <a href="/services/seo-services" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
                     Learn More 
                     <span className="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-2">arrow_forward</span>
                   </a>
@@ -166,7 +166,7 @@ export default function ServicesSection() {
                 <div className="mt-auto">
                   <h3 className="text-white text-headline-md font-bold mb-2">Brand Identity</h3>
                   <p className="text-secondary/70 text-body-md">Crafting iconic visual languages that resonate across the evolving digital landscape.</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
+                  <a href="/services/brand-identity" className="inline-flex items-center gap-2 text-primary font-medium group/btn">
                     Learn More 
                     <span className="material-symbols-outlined transition-transform duration-300 group-hover/btn:translate-x-2">arrow_forward</span>
                   </a>
