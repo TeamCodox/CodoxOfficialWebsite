@@ -27,6 +27,14 @@ npm run preview
 - `tailwind.config.js`: original exported color, spacing, radius, and typography tokens
 
 ## Notes
-- The source export referenced an unresolved `{{DATA:ANIMATION:ANIMATION_112}}` placeholder. It was not executable source code, so it was omitted. The portfolio atmosphere section is preserved, and the rest of the page remains usable.
+- The source export referenced an unresolved `{{DATA:ANIMATION:ANIMATION_112}}` placeholder. It was not executable source code, so it was omitted.
 - Images that were remote in the original HTML remain remote URLs. Download and move them into `src/assets/` if you want to self-host them.
 - Contact forms and links keep their original destinations/placeholder behavior; connect them to your backend or a form service when those endpoints are available.
+
+
+## Portfolio page
+
+The separate portfolio design is converted into a React page at `/portfolio`.
+From the homepage, use the **View More** link in the projects section to open it.
+The portfolio page includes its own hero, case studies, and contact call-to-action.
+It uses the existing Vite SPA fallback, so no routing package is required.

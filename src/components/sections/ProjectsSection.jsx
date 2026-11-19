@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ProjectsSection() {
   return (
-    <section className="bg-black py-section-gap relative overflow-hidden flex flex-col items-center text-center px-margin-mobile md:px-margin-desktop" style={{backgroundColor: "rgb(13, 13, 13)"}} id="projects">
+    <section className="bg-black pt-14 pb-14 relative overflow-hidden flex flex-col items-center text-center px-margin-mobile md:px-margin-desktop" style={{backgroundColor: "rgb(13, 13, 13)"}} id="projects">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       
       
@@ -20,7 +20,7 @@ export default function ProjectsSection() {
         
         <span className="text-white">Case Studies</span>
         <span className="italic text-primary/80 relative inline-block ml-3" style={{fontFamily: "\"Playfair Display\", serif", fontWeight: "500"}}>
-          <span className="text-[1.1em] leading-none inline-block transform -translate-y-1 text-white">&</span>
+          <span className="text-[1.1em] leading-none inline-block transform -translate-y-1 text-white">&</span>{" "}
            Projects
           <svg className="absolute bottom-[-8px] left-0 w-full h-6 pointer-events-none overflow-visible" viewBox="0 0 300 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 25C60 22 180 18 298 32" stroke="#a0b4e8" strokeWidth="3" strokeLinecap="round" className="opacity-80" style={{strokeDasharray: "400", strokeDashoffset: "400", animation: "draw-organic-line 2s ease-in-out forwards"}}></path>
@@ -239,7 +239,7 @@ export default function ProjectsSection() {
       </div>
       <div className="mt-16 flex justify-center relative z-20">
         
-        <a href="#" className="group/view-more px-10 py-4 rounded-full border border-white/10 text-on-surface font-bold flex items-center gap-3 transition-all duration-500 hover:border-primary/50 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] hover:-translate-y-1">
+        <a href="/portfolio" className="group/view-more px-10 py-4 rounded-full border border-white/10 text-on-surface font-bold flex items-center gap-3 transition-all duration-500 hover:border-primary/50 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] hover:-translate-y-1">
           
           <span className="font-body-md tracking-tight">View More</span>
           

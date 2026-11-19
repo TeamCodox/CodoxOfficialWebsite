@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="relative py-section-gap px-margin-mobile md:px-margin-desktop bg-[#0d0d0d] overflow-hidden" style={{fontFamily: "Poppins, sans-serif"}}>
+    <section id="pricing" className="scroll-mt-24 relative py-section-gap px-margin-mobile md:px-margin-desktop bg-[#0d0d0d] overflow-hidden" style={{fontFamily: "Poppins, sans-serif"}}>
       
       <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[180px] font-bold pointer-events-none select-none z-0 uppercase bg-gradient-to-b from-white/5 to-transparent bg-clip-text text-transparent tracking-tighter" style={{fontFamily: "\"Hanken Grotesk\", sans-serif"}}>Pricing</div>
       
@@ -20,7 +20,7 @@ export default function PricingSection() {
             <h2 className="text-white font-bold leading-tight tracking-tighter text-4xl md:text-5xl">
               <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">
                 Ready to launch? 
-                <font color="#adc6ff" face="Playfair Display, serif">
+                <font color="#adc6ff" face="Playfair Display, serif" style={{ marginLeft: "0.12em" }}>
                   <span style={{fontWeight: "500"}} className="">
                     <i>Lets Build</i>
                   </span>
