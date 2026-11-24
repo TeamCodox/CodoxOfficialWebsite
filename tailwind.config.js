@@ -23,7 +23,14 @@ export default {
         "on-primary-fixed-variant": "#004493", "inverse-on-surface": "#303030"
       },
       borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
-      spacing: { unit: "8px", "margin-mobile": "20px", "section-gap": "120px", "margin-desktop": "64px", gutter: "24px", "container-max": "1280px" },
+      spacing: {
+        unit: "8px",
+        "margin-mobile": "clamp(1.125rem, 4vw, 2rem)",
+        "section-gap": "clamp(4.25rem, 8vw, 7.5rem)",
+        "margin-desktop": "clamp(1.75rem, 4.5vw, 4rem)",
+        gutter: "24px",
+        "container-max": "1280px"
+      },
       fontFamily: { "display-lg": ["Hanken Grotesk", "sans-serif"], "body-md": ["Hanken Grotesk", "sans-serif"], "body-lg": ["Hanken Grotesk", "sans-serif"], "headline-lg": ["Hanken Grotesk", "sans-serif"], "label-sm": ["Geist", "sans-serif"], "headline-md": ["Hanken Grotesk", "sans-serif"], "label-md": ["Geist", "sans-serif"], "display-lg-mobile": ["Hanken Grotesk", "sans-serif"] },
       fontSize: { "display-lg": ["72px", { lineHeight: "80px", letterSpacing: "-0.04em", fontWeight: "700" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }], "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }], "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }], "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }], "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "500" }], "display-lg-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }] }
     }

@@ -2,18 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #000;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 700ms;
+}
+
+.loading-screen--leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-content {
+  display: grid;
+  place-items: center;
+}
+
+.loading-logo {
+  width: clamp(96px, 14vw, 180px);
+  height: auto;
+}
+
+@keyframes loading-logo-pulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-logo {
+    animation: none;
+  }
+}
+
 :root { color-scheme: dark; font-family: "Hanken Grotesk", sans-serif; background: #000; scroll-behavior: smooth; }
-html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-body { margin: 0; min-width: 320px; background: #000; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: clip; }
+body { margin: 0; min-width: 320px; background: #000; overflow-x: clip; }
 img { max-width: 100%; }
 button, a { -webkit-tap-highlight-color: transparent; }
 ::selection { color: #000; background: #adc6ff; }
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid #adc6ff;
+  outline-offset: 3px;
+}
 
 /* Shared visual details from the original exported design. */
 .inline-defs-container { position: absolute; width: 0; height: 0; overflow: hidden; }
 @keyframes draw-organic-line { to { stroke-dashoffset: 0; } }
 @keyframes draw-underline { to { stroke-dashoffset: 0; } }
+@keyframes hero-highlight-enter {
+  0% { opacity: 0; translate: 0 8px; }
+  100% { opacity: 1; translate: 0 0; }
+}
+@keyframes hero-underline-draw {
+  0% { stroke-dashoffset: 320; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes portfolio-project-enter {
+  from { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+.portfolio-project-enter {
+  animation: portfolio-project-enter 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-highlight-word {
+  animation: hero-highlight-enter 450ms cubic-bezier(0.16, 1, 0.3, 1) 40ms both;
+  transform-origin: center;
+}
+.hero-underline-primary {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: hero-underline-draw 550ms cubic-bezier(0.16, 1, 0.3, 1) 140ms forwards;
+}
+.hero-underline-secondary {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: hero-underline-draw 550ms cubic-bezier(0.16, 1, 0.3, 1) 220ms forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-highlight-word,
+  .hero-underline-primary,
+  .hero-underline-secondary,
+  .portfolio-project-enter,
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .hero-marquee-track {
+    animation: none;
+  }
+  .hero-underline-primary,
+  .hero-underline-secondary {
+    stroke-dashoffset: 0;
+  }
+}
 @keyframes draw-organic-line-faq { to { stroke-dashoffset: 0; } }
+@keyframes workflow-flow {
+  from { stroke-dashoffset: 232; }
+  to { stroke-dashoffset: 0; }
+}
+.workflow-flow,
+.workflow-flow-glow {
+  animation: workflow-flow 5.5s linear infinite;
+}
+@keyframes status-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.blink {
+  animation: status-blink 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .workflow-flow,
+  .workflow-flow-glow,
+  .blink {
+    animation: none;
+  }
+}
 @keyframes soft-pulse { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
 .animate-pulse { animation: soft-pulse 8s ease-in-out infinite; }
 @keyframes shimmer { 100% { transform: translateX(100%); } }
@@ -21,8 +136,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .animate-marquee-reverse { animation: marquee-reverse 40s linear infinite; }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .animate-marquee { animation: marquee 40s linear infinite; }
+@keyframes hero-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.hero-marquee-track {
+  animation: hero-marquee 32s linear infinite;
+  will-change: transform;
+}
+.hero-marquee-track:hover {
+  animation-play-state: paused;
+}
 nav.nav-scrolled {
   background-color: rgba(19, 19, 19, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

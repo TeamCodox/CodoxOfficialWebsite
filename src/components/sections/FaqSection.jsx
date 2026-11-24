@@ -1,199 +1,193 @@
-import React from "react";
+import React, { useState } from "react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Plus, Sparkles } from "lucide-react";
+import { SectionHeader } from "../ui";
+import { FAQS } from "../../constants/faqs";
 
 export default function FaqSection() {
+  const [openFaq, setOpenFaq] = useState(null);
+
   return (
-    <section id="faq" className="relative py-section-gap px-margin-mobile md:px-margin-desktop bg-black overflow-hidden" style={{fontFamily: "Poppins, sans-serif"}}>
-      <div className="absolute inset-0 pointer-events-none z-0 opacity-40" style={{backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)", backgroundSize: "40px 40px", maskImage: "radial-gradient(circle, black, transparent 80%)"}}></div>
-      <div className="relative z-10 max-w-container-max mx-auto">
-        <div className="mb-16 flex flex-col items-center text-center">
-          <div className="flex items-center gap-3 py-1.5 rounded-full border border-white/20 shadow-lg bg-surface-container/80 backdrop-blur-xl mb-6 w-fit px-5 mx-auto">
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-            </div>
-            <span className="text-on-surface font-bold text-[11px] uppercase tracking-[0.1em]">FAQs</span>
-          </div>
-          <h2 className="text-white font-bold leading-tight tracking-tighter text-4xl md:text-5xl max-w-2xl">
-            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">Explore answers to our</span>
-            <div>
-              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">
-                <span className="relative inline-block">
-                  
-                  <span className="ml-[0.12em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>asked questions</span>
-                  
-                  <svg className="absolute -bottom-3 left-0 w-full h-6 pointer-events-none overflow-visible" viewBox="0 0 300 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 25C60 22 180 18 298 32" stroke="#adc6ff" strokeWidth="3" strokeLinecap="round" className="opacity-80" style={{strokeDasharray: "400", strokeDashoffset: "400", animation: "draw-organic-line-faq 2s ease-in-out forwards"}}></path>
-                  </svg>
-                  
-                </span>
-              </span>
-            </div>
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <div className="backdrop-blur-3xl bg-surface-container/60 border border-white/20 rounded-3xl p-10 flex flex-col gap-10 sticky top-24 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-primary/40 group/kickoff overflow-hidden">
-              
-              
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
-                
-                <span className="relative flex h-2 w-2">
-                  
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4ade80] opacity-75"></span>
-                  
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4ade80]"></span>
-                  
-                </span>
-                
-                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary/80">Available for New Projects</span>
-                
+    <section
+      id="faq"
+      className="relative overflow-hidden bg-[#000000] px-margin-mobile py-20 md:px-margin-desktop md:py-28"
+      style={{ fontFamily: "Poppins, sans-serif" }}
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-primary/[0.07] blur-[120px]"
+      />
+      <div className="relative z-10 mx-auto max-w-container-max">
+        <SectionHeader
+          badge="frequently asked"
+          titlePrefix="Good questions,"
+          titleHighlight="answers"
+          titleSuffix="."
+          subtitleEyebrow="No guesswork"
+          subtitleDescription="A little more clarity before you get started. And if something’s still on your mind, we’re just a message away."
+        />
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6">
+          <aside className="md:col-span-4">
+            <div className="group/contact relative flex h-full min-h-[340px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.07] via-white/[0.035] to-white/[0.015] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.1)] md:p-7">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/[0.12] blur-3xl transition-opacity duration-500 group-hover/contact:opacity-100"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-8 -right-2 select-none text-[120px] font-bold leading-none tracking-tighter text-white/[0.035]"
+              >
+                ?
               </div>
-              
-              <div className="space-y-4 relative z-10">
-                
-                <h3 className="text-white text-4xl font-bold leading-tight tracking-tighter font-display-lg">
-                  Ready to{" "}
+
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-primary/15 bg-primary/[0.08] text-primary">
+                  <Sparkles aria-hidden="true" size={21} strokeWidth={1.7} />
+                </span>
+                <span className="font-mono text-[10px] tracking-[0.12em] text-secondary/55">
+                  // let’s talk()
+                </span>
+              </div>
+
+              <div className="relative z-10 mt-auto pt-12">
+                <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#4ade80] opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#4ade80]" />
+                  </span>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-secondary/75">
+                    Available for new projects
+                  </span>
+                </div>
+
+                <h3 className="max-w-sm text-2xl font-semibold leading-tight tracking-tight text-white md:text-3xl">
+                  Still curious?
+                  <br />
                   <span
-                    className="inline-block ml-[0.20em] mr-[0.15em] text-primary italic"
+                    className="font-medium italic text-primary"
                     style={{ fontFamily: '"Playfair Display", serif' }}
                   >
-                    Architect
+                    Let’s make it clear.
                   </span>
-                  Your Vision?
                 </h3>
-                
-                <p className="text-secondary/60 text-body-md leading-relaxed">
-                Initiate the alpha phase of your next digital breakthrough with our elite engineering squad.
-            </p>
-                
-              </div>
-              
-              <div className="flex flex-col gap-4 relative z-10">
-                
-                <a href="#" className="group/btn relative bg-white text-surface px-6 py-4 rounded-full font-display-lg font-bold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(173,198,255,0.4)] overflow-hidden z-10" style={{boxShadow: "rgba(255, 255, 255, 0.4) 0px 1px 1px inset, rgba(0, 0, 0, 0.2) 0px -1px 1px inset, rgba(173, 198, 255, 0.15) 0px 4px 12px", background: "linear-gradient(rgb(226, 226, 226) 0%, rgb(198, 198, 199) 100%)"}}>
-                  
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></div>
-                  
-                  <span className="material-symbols-outlined text-[22px]">rocket_launch</span>
-                Launch Project
-            
-                </a>
-                
-                <a href="#" className="px-6 py-4 rounded-full font-bold flex items-center justify-center gap-3 transition-all duration-300 border border-white/10 text-on-surface backdrop-blur-xl bg-white/5 hover:bg-white/10 hover:border-white/30 hover:text-primary">
-                Explore Capabilities
-                
-                  <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-                  
-                </a>
-                
-              </div>
-              
-              
-              <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-primary/10 blur-[80px] rounded-full pointer-events-none group-hover/kickoff:bg-primary/20 transition-colors duration-700"></div>
-              
-              <div className="absolute -top-12 -left-12 w-32 h-32 bg-primary/5 blur-[60px] rounded-full pointer-events-none"></div>
-              
-              
-            </div>
-          </div>
-          <div className="md:col-span-8 space-y-4">
-            <div className="faq-item group relative overflow-hidden rounded-2xl border border-white/5 bg-surface-container-low/40 backdrop-blur-md transition-all duration-500 hover:bg-surface-container-low/60">
-              <div className="absolute -left-4 -top-8 pointer-events-none select-none z-0">
-                <span className="font-display-lg text-[64px] font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white/5 to-transparent opacity-40">01</span>
-              </div>
-              <button className="relative z-10 w-full flex items-center justify-between p-8 text-left">
-                <div className="flex items-center gap-8">
-                  <span className="text-white font-bold text-xl tracking-tight">How much does a typical project cost?</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50">
-                  <span className="material-symbols-outlined transition-transform duration-500 text-primary" style={{transform: "rotate(0deg)"}}>add</span>
-                </div>
-              </button>
-              <div className="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out" style={{maxHeight: "0px"}}>
-                <div className="px-8 pb-8 pt-0 ml-16">
-                  <div className="h-[1px] w-12 bg-primary/20 mb-6"></div>
-                  <p className="text-secondary/70 leading-relaxed text-body-lg">Our project costs vary based on scope and complexity. We offer tailored solutions starting from ₹5,000 for basic implementations to bespoke enterprise quotes. Contact us for a detailed breakdown.</p>
+                <p className="mt-3 max-w-sm text-sm leading-6 text-secondary/70">
+                  Tell us what you’re imagining. We’ll help you figure out the best next step—no pressure, just a good conversation.
+                </p>
+
+                <div className="mt-6 flex flex-col gap-3">
+                  <a
+                    href="#contact"
+                    className="group/btn inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-b from-[#e2e2e2] to-[#c6c6c7] px-5 py-3 text-sm font-semibold text-black shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_18px_rgba(173,198,255,0.12)] transition-all duration-300 hover:scale-[0.98] hover:shadow-[0_0_25px_rgba(173,198,255,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                  >
+                    Start a conversation
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      size={16}
+                      className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+                    />
+                  </a>
+                  <a
+                    href="#services"
+                    className="group/services inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-5 py-2.5 text-sm font-medium text-secondary/80 transition-colors duration-300 hover:border-white/25 hover:bg-white/[0.07] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                  >
+                    Explore our services
+                    <ArrowRight
+                      aria-hidden="true"
+                      size={15}
+                      className="transition-transform duration-300 group-hover/services:translate-x-1"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
-            <div className="faq-item group relative overflow-hidden rounded-2xl border border-white/5 bg-surface-container-low/40 backdrop-blur-md transition-all duration-500 hover:bg-surface-container-low/60 mt-4">
-              <div className="absolute -left-4 -top-8 pointer-events-none select-none z-0">
-                <span className="font-display-lg text-[64px] font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white/5 to-transparent opacity-40">02</span>
-              </div>
-              <button className="relative z-10 w-full flex items-center justify-between p-8 text-left">
-                <div className="flex items-center gap-8">
-                  <span className="text-white font-bold text-xl tracking-tight">Do you work with startups or only established companies?</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50">
-                  <span className="material-symbols-outlined transition-transform duration-500 text-primary" style={{transform: "rotate(0deg)"}}>add</span>
-                </div>
-              </button>
-              <div className="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out" style={{maxHeight: "0px"}}>
-                <div className="px-8 pb-8 pt-0 ml-16">
-                  <div className="h-[1px] w-12 bg-primary/20 mb-6"></div>
-                  <p className="text-secondary/70 leading-relaxed text-body-lg">We partner with visionaries at every stage. Whether you are a seed-stage startup or a Fortune 500 enterprise, our workflow is designed to scale with your needs.</p>
-                </div>
-              </div>
-            </div>
-            <div className="faq-item group relative overflow-hidden rounded-2xl border border-white/5 bg-surface-container-low/40 backdrop-blur-md transition-all duration-500 hover:bg-surface-container-low/60 mt-4">
-              <div className="absolute -left-4 -top-8 pointer-events-none select-none z-0">
-                <span className="font-display-lg text-[64px] font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white/5 to-transparent opacity-40">03</span>
-              </div>
-              <button className="relative z-10 w-full flex items-center justify-between p-8 text-left">
-                <div className="flex items-center gap-8">
-                  <span className="text-white font-bold text-xl tracking-tight">What makes your agency different?</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50">
-                  <span className="material-symbols-outlined transition-transform duration-500 text-primary" style={{transform: "rotate(0deg)"}}>add</span>
-                </div>
-              </button>
-              <div className="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out" style={{maxHeight: "0px"}}>
-                <div className="px-8 pb-8 pt-0 ml-16">
-                  <div className="h-[1px] w-12 bg-primary/20 mb-6"></div>
-                  <p className="text-secondary/70 leading-relaxed text-body-lg">We blend crystalline aesthetics with military-grade engineering. Our AI-native approach ensures that we don't just build interfaces, but architect high-performance digital ecosystems.</p>
-                </div>
-              </div>
-            </div>
-            <div className="faq-item group relative overflow-hidden rounded-2xl border border-white/5 bg-surface-container-low/40 backdrop-blur-md transition-all duration-500 hover:bg-surface-container-low/60 mt-4">
-              <div className="absolute -left-4 -top-8 pointer-events-none select-none z-0">
-                <span className="font-display-lg text-[64px] font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white/5 to-transparent opacity-40">04</span>
-              </div>
-              <button className="relative z-10 w-full flex items-center justify-between p-8 text-left">
-                <div className="flex items-center gap-8">
-                  <span className="text-white font-bold text-xl tracking-tight">Will my website be optimized for SEO and performance?</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50">
-                  <span className="material-symbols-outlined transition-transform duration-500 text-primary" style={{transform: "rotate(0deg)"}}>add</span>
-                </div>
-              </button>
-              <div className="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out" style={{maxHeight: "0px"}}>
-                <div className="px-8 pb-8 pt-0 ml-16">
-                  <div className="h-[1px] w-12 bg-primary/20 mb-6"></div>
-                  <p className="text-secondary/70 leading-relaxed text-body-lg">Absolutely. Performance is at the core of our engineering. Every project undergoes rigorous testing for pixel-perfect performance and search engine visibility.</p>
-                </div>
-              </div>
-            </div>
-            <div className="faq-item group relative overflow-hidden rounded-2xl border border-white/5 bg-surface-container-low/40 backdrop-blur-md transition-all duration-500 hover:bg-surface-container-low/60 mt-4">
-              <div className="absolute -left-4 -top-8 pointer-events-none select-none z-0">
-                <span className="font-display-lg text-[64px] font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white/5 to-transparent opacity-40">05</span>
-              </div>
-              <button className="relative z-10 w-full flex items-center justify-between p-8 text-left">
-                <div className="flex items-center gap-8">
-                  <span className="text-white font-bold text-xl tracking-tight">How long does it take to build a website?</span>
-                </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50">
-                  <span className="material-symbols-outlined transition-transform duration-500 text-primary" style={{transform: "rotate(0deg)"}}>add</span>
-                </div>
-              </button>
-              <div className="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out" style={{maxHeight: "0px"}}>
-                <div className="px-8 pb-8 pt-0 ml-16">
-                  <div className="h-[1px] w-12 bg-primary/20 mb-6"></div>
-                  <p className="text-secondary/70 leading-relaxed text-body-lg">A typical project timeline ranges from 4 to 12 weeks depending on complexity. Our agile development process ensures high-impact results from day one.</p>
-                </div>
-              </div>
-            </div>
+          </aside>
+
+          <div className="space-y-3 md:col-span-8 md:space-y-4">
+            {FAQS.map(({ question, answer }, index) => {
+              const isOpen = openFaq === index;
+              const answerId = `faq-answer-${index + 1}`;
+
+              return (
+                <article
+                  key={question}
+                  className={`group/faq relative isolate overflow-hidden rounded-2xl border bg-gradient-to-br from-white/[0.045] to-white/[0.015] backdrop-blur-md transition-all duration-300 ${
+                    isOpen
+                      ? "border-primary/30 shadow-[0_12px_36px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.06)]"
+                      : "border-white/[0.08] hover:border-white/15 hover:from-white/[0.06]"
+                  }`}
+                >
+                  <div
+                    aria-hidden="true"
+                    className={`pointer-events-none absolute inset-y-0 left-0 w-[2px] origin-top bg-gradient-to-b from-primary via-primary/45 to-transparent transition-transform duration-500 ${
+                      isOpen ? "scale-y-100" : "scale-y-0 group-hover/faq:scale-y-50"
+                    }`}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className={`pointer-events-none absolute -right-1 -top-5 select-none font-bold text-[76px] leading-none tracking-tighter transition-colors duration-300 ${
+                      isOpen ? "text-primary/[0.07]" : "text-white/[0.025]"
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={answerId}
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    className="relative z-10 flex min-h-[68px] w-full items-center justify-between gap-4 px-5 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-primary sm:px-6"
+                  >
+                    <span className="flex items-center gap-3 sm:gap-4">
+                      <span className="font-mono text-[10px] tracking-[0.12em] text-primary/60">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span
+                        id={`faq-question-${index + 1}`}
+                        className="text-sm font-medium leading-6 tracking-tight text-white sm:text-base"
+                      >
+                        {question}
+                      </span>
+                    </span>
+                    <span
+                      className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                        isOpen
+                          ? "rotate-45 border-primary/35 bg-primary/[0.12] text-primary"
+                          : "border-white/10 bg-white/[0.025] text-secondary/70 group-hover/faq:border-primary/30 group-hover/faq:text-primary"
+                      }`}
+                    >
+                      <Plus aria-hidden="true" size={16} strokeWidth={1.7} />
+                    </span>
+                  </button>
+
+                  <div
+                    id={answerId}
+                    role="region"
+                    aria-labelledby={`faq-question-${index + 1}`}
+                    aria-hidden={!isOpen}
+                    className={`grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <div className="ml-5 border-t border-white/[0.07] px-5 pb-5 pt-4 sm:ml-6 sm:px-6 sm:pb-6">
+                        <div className="flex gap-3">
+                          <ArrowDownRight
+                            aria-hidden="true"
+                            size={16}
+                            strokeWidth={1.6}
+                            className="mt-0.5 flex-shrink-0 text-primary/65"
+                          />
+                          <p className="max-w-2xl text-sm leading-6 text-secondary/75">
+                            {answer}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>

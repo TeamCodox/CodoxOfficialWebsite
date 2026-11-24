@@ -1,242 +1,164 @@
-import React from "react";
+import React, { useState } from "react";
+import { SectionHeader } from "../ui";
+import { WORKFLOW } from "../../constants/workflow";
 
 export default function WorkflowSection() {
+  const [selectedStep, setSelectedStep] = useState(0);
+  const [hoveredStep, setHoveredStep] = useState(null);
+
   return (
-    <section id="how-we-work" className="relative py-section-gap px-margin-mobile md:px-margin-desktop bg-black overflow-hidden" style={{fontFamily: "Poppins, sans-serif"}}>
+    <section
+      className="relative overflow-hidden bg-[#000000] px-margin-mobile py-20 md:px-margin-desktop md:py-28"
+      style={{ fontFamily: "Poppins, sans-serif" }}
+      id="how-we-work"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-primary/[0.07] blur-[120px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(173, 198, 255, 0.22) 1px, transparent 1.4px)",
+          backgroundSize: "28px 28px",
+          maskImage:
+            "radial-gradient(ellipse at 50% 52%, black 0%, rgba(0, 0, 0, 0.65) 56%, transparent 92%)",
+        }}
+      />
+
       <div className="relative z-10 max-w-container-max mx-auto">
-        <div className="mb-20">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-            <div className="flex-grow">
-              <div className="flex items-center gap-3 py-1.5 rounded-full border border-white/20 shadow-lg bg-surface-container/80 backdrop-blur-xl mb-6 w-fit px-5">
-                <div className="flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                  </span>
-                </div>
-                <span className="text-on-surface font-bold text-[11px] uppercase tracking-[0.1em]">the workflow</span>
-              </div>
-              <h2 className="text-white font-bold leading-tight tracking-tighter relative group text-4xl md:text-5xl">
-                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40">
-                  Our Strategic 
-                  <span className="ml-[0.30em] italic font-medium text-primary inline-block transform hover:scale-105 transition-transform duration-500" style={{fontFamily: "\"Playfair Display\", serif"}}>Workflow</span>
-                </span>
-              </h2>
-            </div>
-            <div className="flex flex-col items-start text-left max-w-lg">
-              <p className="text-secondary font-body-md leading-relaxed">Outcome-focused delivery: expect high-impact results from day one with a streamlined process designed to scale.</p>
-            </div>
-          </div>
-        </div>
-        <div className="relative mt-16">
-          
-          
-          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block opacity-30" style={{zIndex: "0"}}>
-            
+        <SectionHeader
+          badge="the workflow"
+          titlePrefix="Our Strategic"
+          titleHighlight="Workflow"
+          subtitleEyebrow="From idea to impact"
+          subtitleDescription="Outcome-focused delivery with a clear, collaborative process designed to turn ambitious ideas into lasting results."
+        />
+
+        <div className="relative mt-12 md:mt-16">
+          <svg
+            aria-hidden="true"
+            className="workflow-connector pointer-events-none absolute inset-y-0 left-0 z-0 h-full w-14 md:left-1/2 md:w-[88px] md:-translate-x-1/2"
+            viewBox="0 0 100 1000"
+            preserveAspectRatio="none"
+            fill="none"
+          >
             <defs>
-              
-              <linearGradient id="wire-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                
-                <stop offset="0%" stopColor="#adc6ff" stopOpacity="0"></stop>
-                
-                <stop offset="50%" stopColor="#adc6ff" stopOpacity="1"></stop>
-                
-                <stop offset="100%" stopColor="#adc6ff" stopOpacity="0"></stop>
-                
+              <linearGradient
+                id="workflow-line-gradient"
+                x1="50"
+                y1="0"
+                x2="50"
+                y2="1000"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#adc6ff" stopOpacity="0" />
+                <stop offset="0.15" stopColor="#adc6ff" stopOpacity="0.55" />
+                <stop offset="0.5" stopColor="#adc6ff" stopOpacity="0.9" />
+                <stop offset="0.85" stopColor="#adc6ff" stopOpacity="0.55" />
+                <stop offset="1" stopColor="#adc6ff" stopOpacity="0" />
               </linearGradient>
-              
+              <path
+                id="workflow-route"
+                d="M50 0 C50 50 20 50 50 100 S80 150 50 200 S20 250 50 300 S80 350 50 400 S20 450 50 500 S80 550 50 600 S20 650 50 700 S80 750 50 800 S20 850 50 900 S50 950 50 1000"
+              />
             </defs>
-            
-            <path d="M 10% 50% Q 20% 20%, 30% 50% T 50% 50% T 70% 50% T 90% 50%" stroke="url(#wire-grad)" strokeWidth="2" fill="none" className="animate-pulse"></path>
-            
+            <use href="#workflow-route" stroke="#adc6ff" strokeOpacity="0.1" strokeWidth="8" />
+            <use href="#workflow-route" stroke="url(#workflow-line-gradient)" strokeWidth="1.5" />
+            <use
+              href="#workflow-route"
+              className="workflow-flow-glow"
+              stroke="#adc6ff"
+              strokeOpacity="0.28"
+              strokeWidth="6"
+              strokeDasharray="34 82"
+            />
+            <use
+              href="#workflow-route"
+              className="workflow-flow"
+              stroke="#adc6ff"
+              strokeOpacity="0.95"
+              strokeWidth="2"
+              strokeDasharray="34 82"
+            />
           </svg>
-          
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10">
-            
-            
-            
-            <div className="md:col-span-4 bento-card-wrapper group relative min-h-[320px]" style={{perspective: "1000px"}}>
-              
-              <div className="bento-card h-full w-full backdrop-blur-xl bg-surface-container/40 border border-white/10 rounded-lg transition-all duration-500 ease-out overflow-hidden flex flex-col justify-between px-8 py-8" style={{transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", transformStyle: "preserve-3d", transform: "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"}}>
-                
-                <div className="absolute -bottom-8 -right-8 text-[120px] font-bold pointer-events-none select-none z-0" style={{color: "rgba(53, 53, 53, 0.2)", maskImage: "linear-gradient(black, transparent)"}}>01</div>
-                
-                <div className="bento-glare absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300" style={{background: "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(173,198,255,0.15) 0%, transparent 60%)", opacity: "0", "--mouse-x": "97.40358422182621%", "--mouse-y": "9.906158447265625%"}}></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  
-                  <div className="flex justify-between items-start mb-6">
-                    
-                    <span className="material-symbols-outlined text-primary text-5xl">search_insights</span>
-                    
-                    <span className="font-mono text-primary/60 text-[12px] tracking-widest uppercase">// strategy.discovery()</span>
-                    
-                  </div>
-                  
-                  <div className="mt-auto">
-                    
-                    <h3 className="text-white text-headline-md font-bold mb-2">
-                      Discovery & 
-                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Strategy</span>
-                    </h3>
-                    
-                    <p className="text-secondary/70 text-body-md">Deep diving into your vision to architect the perfect roadmap for your digital infrastructure.</p>
-                    
-                  </div>
-                  
-                </div>
-                
-              </div>
-              
-            </div>
-            
-            
-            <div className="md:col-span-4 bento-card-wrapper group relative min-h-[320px]" style={{perspective: "1000px"}}>
-              
-              <div className="bento-card h-full w-full backdrop-blur-xl bg-surface-container/40 border border-white/10 rounded-lg transition-all duration-500 ease-out overflow-hidden flex flex-col justify-between px-8 py-8" style={{transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", transformStyle: "preserve-3d", transform: "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"}}>
-                
-                <div className="absolute -bottom-8 -right-8 text-[120px] font-bold pointer-events-none select-none z-0" style={{color: "rgba(53, 53, 53, 0.2)", maskImage: "linear-gradient(black, transparent)"}}>02</div>
-                
-                <div className="bento-glare absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300" style={{background: "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(173,198,255,0.15) 0%, transparent 60%)", opacity: "0", "--mouse-x": "98.21628646011258%", "--mouse-y": "78.03115844726562%"}}></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  
-                  <div className="flex justify-between items-start mb-6">
-                    
-                    <span className="material-symbols-outlined text-primary text-5xl">architecture</span>
-                    
-                    <span className="font-mono text-primary/60 text-[12px] tracking-widest uppercase">// digital.engineering()</span>
-                    
-                  </div>
-                  
-                  <div className="mt-auto">
-                    
-                    <h3 className="text-white text-headline-md font-bold mb-2">
-                      Creative 
-                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Engineering</span>
-                    </h3>
-                    
-                    <p className="text-secondary/70 text-body-md">Blending crystalline aesthetics with functional precision and technical excellence.</p>
-                    
-                  </div>
-                  
-                </div>
-                
-              </div>
-              
-            </div>
-            
-            
-            <div className="md:col-span-4 bento-card-wrapper group relative min-h-[320px]" style={{perspective: "1000px"}}>
-              
-              <div className="bento-card h-full w-full backdrop-blur-xl bg-surface-container/40 border border-white/10 rounded-lg transition-all duration-500 ease-out overflow-hidden flex flex-col justify-between px-8 py-8" style={{transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", transformStyle: "preserve-3d", transform: "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"}}>
-                
-                <div className="absolute -bottom-8 -right-8 text-[120px] font-bold pointer-events-none select-none z-0" style={{color: "rgba(53, 53, 53, 0.2)", maskImage: "linear-gradient(black, transparent)"}}>03</div>
-                
-                <div className="bento-glare absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300" style={{background: "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(173,198,255,0.15) 0%, transparent 60%)", opacity: "0", "--mouse-x": "99.26948794452612%", "--mouse-y": "66.15615844726562%"}}></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  
-                  <div className="flex justify-between items-start mb-6">
-                    
-                    <span className="material-symbols-outlined text-primary text-5xl">code_blocks</span>
-                    
-                    <span className="font-mono text-primary/60 text-[12px] tracking-widest uppercase">// product.dev()</span>
-                    
-                  </div>
-                  
-                  <div className="mt-auto">
-                    
-                    <h3 className="text-white text-headline-md font-bold mb-2">
-                      Agile 
-                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Development</span>
-                    </h3>
-                    
-                    <p className="text-secondary/70 text-body-md">Building robust foundations with clean, scalable code and modern tech stacks.</p>
-                    
-                  </div>
-                  
-                </div>
-                
-              </div>
-              
-            </div>
-            
-            
-            
-            <div className="md:col-span-6 bento-card-wrapper group relative min-h-[320px]" style={{perspective: "1000px"}}>
-              
-              <div className="bento-card h-full w-full backdrop-blur-xl bg-surface-container/40 border border-white/10 rounded-lg transition-all duration-500 ease-out overflow-hidden flex flex-col justify-between px-8 py-8" style={{transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", transformStyle: "preserve-3d", transform: "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"}}>
-                
-                <div className="absolute -bottom-8 -right-8 text-[120px] font-bold pointer-events-none select-none z-0" style={{color: "rgba(53, 53, 53, 0.2)", maskImage: "linear-gradient(black, transparent)"}}>04</div>
-                
-                <div className="bento-glare absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300" style={{background: "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(173,198,255,0.15) 0%, transparent 60%)", opacity: "0", "--mouse-x": "97.29299363057325%", "--mouse-y": "42.093658447265625%"}}></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  
-                  <div className="flex justify-between items-start mb-6">
-                    
-                    <span className="material-symbols-outlined text-primary text-5xl">verified_user</span>
-                    
-                    <span className="font-mono text-primary/60 text-[12px] tracking-widest uppercase">// quality.testing()</span>
-                    
-                  </div>
-                  
-                  <div className="mt-auto">
-                    
-                    <h3 className="text-white text-headline-md font-bold mb-2">
-                      Quality 
-                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Assurance</span>
-                    </h3>
-                    
-                    <p className="text-secondary/70 text-body-md max-w-md">Rigorous testing for pixel-perfect performance and military-grade security protocols.</p>
-                    
-                  </div>
-                  
-                </div>
-                
-              </div>
-              
-            </div>
-            
-            
-            <div className="md:col-span-6 bento-card-wrapper group relative min-h-[320px]" style={{perspective: "1000px"}}>
-              
-              <div className="bento-card h-full w-full backdrop-blur-xl bg-surface-container/40 border border-white/10 rounded-lg transition-all duration-500 ease-out overflow-hidden flex flex-col justify-between px-8 py-8" style={{transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", transformStyle: "preserve-3d", transform: "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"}}>
-                
-                <div className="absolute -bottom-8 -right-8 text-[120px] font-bold pointer-events-none select-none z-0" style={{color: "rgba(53, 53, 53, 0.2)", maskImage: "linear-gradient(black, transparent)"}}>05</div>
-                
-                <div className="bento-glare absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300" style={{background: "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(173,198,255,0.15) 0%, transparent 60%)", opacity: "0", "--mouse-x": "93.78980891719745%", "--mouse-y": "40.843658447265625%"}}></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  
-                  <div className="flex justify-between items-start mb-6">
-                    
-                    <span className="material-symbols-outlined text-primary text-5xl">rocket_launch</span>
-                    
-                    <span className="font-mono text-primary/60 text-[12px] tracking-widest uppercase">// growth.optimization()</span>
-                    
-                  </div>
-                  
-                  <div className="mt-auto">
-                    
-                    <h3 className="text-white text-headline-md font-bold mb-2">
-                      Launch & 
-                      <span className="ml-[0.30em] italic font-medium text-primary" style={{fontFamily: "\"Playfair Display\", serif"}}>Optimize</span>
-                    </h3>
-                    
-                    <p className="text-secondary/70 text-body-md max-w-md">Seamless deployment and data-driven impact for next-gen digital excellence and scaling.</p>
-                    
-                  </div>
-                  
-                </div>
-                
-              </div>
-              
-            </div>
-            
-          </div>
-          
+
+          <ol className="relative z-10">
+            {WORKFLOW.map(({ number, icon: Icon, code, title, description }, index) => {
+              const isLeft = index % 2 === 0;
+              const isActive = selectedStep === index || hoveredStep === index;
+
+              return (
+                <li key={number} className="min-h-[160px] sm:min-h-[180px] md:min-h-[200px]">
+                  <button
+                    type="button"
+                    aria-label={`Highlight step ${number}: ${title}`}
+                    aria-pressed={selectedStep === index}
+                    onClick={() => setSelectedStep(index)}
+                    onMouseEnter={() => setHoveredStep(index)}
+                    onMouseLeave={() => setHoveredStep(null)}
+                    onFocus={() => setHoveredStep(index)}
+                    onBlur={() => setHoveredStep(null)}
+                    className="group grid min-h-[160px] sm:min-h-[180px] w-full grid-cols-[56px_minmax(0,1fr)] items-center gap-x-4 gap-y-4 py-5 sm:py-6 text-left outline-none md:min-h-[200px] md:grid-cols-[minmax(0,1fr)_88px_minmax(0,1fr)] md:gap-x-5"
+                  >
+                    <span className="relative col-start-1 row-start-1 flex h-14 w-14 items-center justify-center md:col-start-2">
+                      <span
+                        aria-hidden="true"
+                        className={`absolute inset-[-9px] rounded-full bg-primary/[0.12] blur-lg transition-all duration-500 ${
+                          isActive ? "scale-100 opacity-100" : "scale-75 opacity-0"
+                        }`}
+                      />
+                      <span
+                        className={`relative flex h-14 w-14 items-center justify-center rounded-full border bg-[#080a0f]/95 text-primary shadow-[0_0_0_6px_rgba(0,0,0,0.7)] backdrop-blur-xl transition-all duration-500 ${
+                          isActive
+                            ? "border-primary/50 bg-primary/[0.12] shadow-[0_0_28px_rgba(173,198,255,0.2),0_0_0_6px_rgba(0,0,0,0.7)]"
+                            : "border-white/15"
+                        }`}
+                      >
+                        <Icon
+                          aria-hidden="true"
+                          size={22}
+                          strokeWidth={1.7}
+                          className="transition-transform duration-500 group-hover:scale-110"
+                        />
+                      </span>
+                    </span>
+
+                    <span
+                      className={`col-start-2 row-start-1 flex max-w-[560px] flex-col md:row-start-1 ${
+                        isLeft
+                          ? "md:col-start-1 md:ml-auto md:items-end md:text-right"
+                          : "md:col-start-3 md:items-start md:text-left"
+                      }`}
+                    >
+                      <span className="mb-2 flex items-center gap-3 font-mono text-[11px] tracking-[0.12em] text-primary/65">
+                        {isLeft && (
+                          <span className="hidden h-px w-8 bg-gradient-to-l from-primary/60 to-transparent md:block" />
+                        )}
+                        <span>{number}</span>
+                        <span>{code}</span>
+                        {!isLeft && (
+                          <span className="hidden h-px w-8 bg-gradient-to-r from-primary/60 to-transparent md:block" />
+                        )}
+                      </span>
+                      <span
+                        className={`text-xl sm:text-2xl font-semibold tracking-tight text-white transition-colors duration-300 md:text-[28px] ${
+                          isActive ? "text-primary" : ""
+                        }`}
+                      >
+                        {title}
+                      </span>
+                      <span className="mt-2 text-sm sm:text-base leading-relaxed text-secondary/80 md:text-[17px] md:leading-7">
+                        {description}
+                      </span>
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>
