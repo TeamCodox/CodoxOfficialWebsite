@@ -10,14 +10,15 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "lucide-react": "^1.77.0",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "vite": "latest"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17",
-    "postcss": "latest",
+    "@tailwindcss/forms": "^0.5.10",
     "autoprefixer": "latest",
-    "@tailwindcss/forms": "^0.5.10"
+    "postcss": "latest",
+    "tailwindcss": "^3.4.17"
   }
 }
