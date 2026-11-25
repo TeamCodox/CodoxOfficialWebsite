@@ -17,16 +17,17 @@ const submitContactForm = async (req, res, next) => {
 
     // Prepare Telegram message
     const telegramMessage = `
-        🔔 NEW WEBSITE INQUIRY
+🔔 NEW INQUIRY
 
-        👤 Name: ${name.trim()}
-        📧 Email: ${email.trim()}
-        📞 Phone: ${phone.trim()}
+👤 Name: ${name.trim()}
+📧 Email: ${email.trim()}
+📞 Phone: ${phone.trim()}
 
-        🛠 Service: ${service.trim()}
+🛠 Service: ${service.trim()}
 
-        💬 Message:
-        ${message.trim()}`;
+💬 Message:
+${message.trim()}
+`;
 
     // Send Telegram notification
     await sendTelegramMessage(telegramMessage);

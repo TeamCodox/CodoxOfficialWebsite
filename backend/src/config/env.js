@@ -15,7 +15,7 @@ for (const variable of requiredEnvVariables) {
 }
 
 export const env = {
-  port: process.env.PORT || 5000,
+  port: process.env.PORT || 5001,
   frontendUrl: process.env.FRONTEND_URL,
   telegramBotToken: process.env.TELEGRAM_BOT_TOKEN,
   telegramChatId: process.env.TELEGRAM_CHAT_ID,
